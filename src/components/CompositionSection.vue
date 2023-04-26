@@ -5,6 +5,9 @@
             <h4>{{ sectionH4 }}</h4>
             <p class="subline">{{ sectionSubline }}</p>
         </div>
+        <div>
+            <slot></slot>
+        </div>
     </section>
 </template>
 
@@ -33,6 +36,12 @@ section {
     max-width:1280px;
     margin:auto;
     padding:5rem 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: var(--two-gap);
 }
 .flex-vertical {
     display: flex;

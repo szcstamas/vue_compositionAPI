@@ -47,7 +47,21 @@ p, span, a {
   font-size: 16px;
   color: #272727;
 }
+button {
+  appearance: none;
+  border: none;
+  background: var(--main-color-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.primary-text {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
 .subline {
-  color: #ccc;
+  color: #343434;
 }
 </style>
