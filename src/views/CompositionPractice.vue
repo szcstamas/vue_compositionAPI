@@ -21,19 +21,37 @@
 
 <script>
 import CompositionSection from "@/components/CompositionSection.vue"
-import { ref, computed } from "vue"
+import { ref, reactive, computed, toRefs} from "vue"
 
 export default {
     setup() {
-        const capacity = ref(3);
-        const attending = ref(["Tim", "Bob", "Joe"]);
+        //DEFAULT WAY OF USING REACTIVE DATA
+        //1.
+        // const capacity = ref(3);
+        // const attending = ref(["Tim", "Bob", "Joe"]);
 
-        const spacesLeft = computed(() => {
-            return capacity.value - attending.value.length
+        // const spacesLeft = computed(() => {
+        //     return capacity.value - attending.value.length
+        // })
+
+        // function increaseCapacity() { capacity.value++; }
+        // return { capacity, increaseCapacity, attending, spacesLeft };
+
+        //ALTERNATIVE WAY OF USING REACTIVE DATA
+        //2.
+        //using reactive function here which takes an object with the used data
+        const event = reactive({
+            capacity: 4,
+            attending: ["Tim", "Bob", "Joe"],
+            spacesLeft: computed(() => {
+                return event.capacity - event.attending.length
+            })
         })
 
-        function increaseCapacity() { capacity.value++; }
-        return { capacity, increaseCapacity, attending, spacesLeft };
+        //have to use toRefs to hold passed data reactive + this way we dont have to destructure event properties
+        function increaseCapacity() { event.capacity++; }
+        return { ...toRefs(event), increaseCapacity };
+        //end of alternative way
     },
     components: {
         CompositionSection
