@@ -21,15 +21,22 @@
 
 <script>
 import CompositionSection from "@/components/CompositionSection.vue"
-import { ref, reactive, computed, toRefs} from "vue"
+//IMPORT COMPOSITION FUNCTION MODULE
+import useEventSpace from "@/use/event-space"
+import useMapping from "@/use/mapping"
+// import { ref, reactive, computed, toRefs} from "vue"
 
 export default {
     setup() {
+        //MODULARIZING
+        const { capacity, attending, spacesLeft, increaseCapacity } = useEventSpace();
+        const {map, embedId} = useMapping();
+        return { capacity, attending, spacesLeft, increaseCapacity, map, embedId };
+
         //DEFAULT WAY OF USING REACTIVE DATA
         //1.
         // const capacity = ref(3);
         // const attending = ref(["Tim", "Bob", "Joe"]);
-
         // const spacesLeft = computed(() => {
         //     return capacity.value - attending.value.length
         // })
@@ -40,23 +47,37 @@ export default {
         //ALTERNATIVE WAY OF USING REACTIVE DATA
         //2.
         //using reactive function here which takes an object with the used data
-        const event = reactive({
-            capacity: 4,
-            attending: ["Tim", "Bob", "Joe"],
-            spacesLeft: computed(() => {
-                return event.capacity - event.attending.length
-            })
-        })
+        // const event = reactive({
+        //     capacity: 4,
+        //     attending: ["Tim", "Bob", "Joe"],
+        //     spacesLeft: computed(() => {
+        //         return event.capacity - event.attending.length
+        //     })
+        // })
 
         //have to use toRefs to hold passed data reactive + this way we dont have to destructure event properties
-        function increaseCapacity() { event.capacity++; }
-        return { ...toRefs(event), increaseCapacity };
+        // function increaseCapacity() { event.capacity++; }
+        // return { ...toRefs(event), increaseCapacity };
         //end of alternative way
     },
     components: {
         CompositionSection
     }
 }
+
+//this will be imported from the following route: "@/use/event-space"
+//COMPONENT FUNCTION
+// function useEventSpace() {
+//     const capacity = ref(3);
+//     const attending = ref(["Tim", "Bob", "Joe"]);
+//     const spacesLeft = computed(() => {
+//         return capacity.value - attending.value.length
+//     })
+
+//     function increaseCapacity() { capacity.value++; }
+//     return { capacity, increaseCapacity, attending, spacesLeft };
+// }
+
 </script>
 
 <style lang="scss" scoped>
