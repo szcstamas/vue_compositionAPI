@@ -9,6 +9,10 @@
                 Search for <input type="text" placeholder="something..." v-model="searchInput">
                 <p style="margin-top:1rem;">Searched keyword: {{ results }}</p>
             </div>
+            <div style="margin-top:2rem;">
+                <h1>Vuex Store</h1>
+                <p>The length of categories is {{ catLength }}</p>
+            </div>
         </CompositionSection>
     </main>
 </template>
@@ -16,14 +20,18 @@
 <script>
 import CompositionSection from "@/components/CompositionSection.vue";
 import { ref, watch } from "vue";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 export default {
     components: {
         CompositionSection
     },
     computed: {
-
+        catLength() {
+            return this.$store.getters.catLength;
+        },
+        ...mapGetters(["getEventById"]),
+        ...mapState(["user", "categories"]),
     },
     setup() {
         const searchInput = ref("");
