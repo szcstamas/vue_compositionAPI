@@ -15,7 +15,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex-center max-width-1280px">
+            <div class="flex-start max-width-1280px green" style="margin-top:2rem;">
                 <h2>I am the H2</h2>
                 <p>And I hope that I am centered</p>
             </div>

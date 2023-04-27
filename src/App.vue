@@ -16,14 +16,13 @@ export default {
 
 <style lang="scss">
 @import './assets/mixins.scss';
+@import './assets/variables.scss';
 
 .flex-center {
-  @include flexBase(center, center, column, column);
+  @include flexBase(center, center, var(--one-gap), column, column);
 }
-
-.max-width-1280px {
-  width: 100%;
-  max-width: 1280px;
+.flex-start {
+  @include flexBase(center, flex-start, var(--one-gap), column, column);
 }
 
 :root {
@@ -79,5 +78,9 @@ button {
 }
 .subline {
   color: #343434;
+}
+.max-width-1280px {
+  width: 100%;
+  max-width: 1280px;
 }
 </style>

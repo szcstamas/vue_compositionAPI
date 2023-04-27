@@ -1,7 +1,8 @@
-@mixin flexBase($justify, $align, $direction, $mobileDirection) {
+@mixin flexBase($justify, $align, $gap, $direction, $mobileDirection) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
+    gap: $gap;
     flex-direction: $direction;
 
     @media (max-width: 480px) {
