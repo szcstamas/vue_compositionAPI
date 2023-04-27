@@ -15,12 +15,28 @@ export default {
 </script>
 
 <style lang="scss">
+@import './assets/mixins.scss';
+
+.flex-center {
+  @include flexBase(center, center, column, column);
+}
+
+.max-width-1280px {
+  width: 100%;
+  max-width: 1280px;
+}
+
 :root {
   --mini-gap: .25rem;
   --half-gap: .5rem;
   --one-gap: 1rem;
   --two-gap: 2rem;
-  --main-color-green: rgb(88, 152, 73);
+  --main-color-green: #589849;
+  --main-color-gray: #343434;
+  --font-size-small: 12px;
+  --font-size-basic: 16px;
+  --font-size-headline: 32px;
+  --font-size-large: 48px;
 }
 
 * {

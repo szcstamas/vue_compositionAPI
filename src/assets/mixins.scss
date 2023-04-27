@@ -1,0 +1,10 @@
+@mixin flexBase($justify, $align, $direction, $mobileDirection) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+
+    @media (max-width: 480px) {
+        flex-direction: $mobileDirection;
+    }
+}
