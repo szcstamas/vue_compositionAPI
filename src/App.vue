@@ -43,7 +43,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-body {
+body, *::placeholder {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 main {

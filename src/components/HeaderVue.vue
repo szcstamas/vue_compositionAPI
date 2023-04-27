@@ -3,6 +3,7 @@
     <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/practice">Practice</RouterLink>
+        <RouterLink to="/watch">Watch Effect</RouterLink>
     </nav>  
   </header>
 </template>
