@@ -8,9 +8,9 @@
             <div>
                 Search for <input v-model="searchInput">
                 <div>
-                    <p>Loading: {{ loading }}</p>
-                    <p>Error: {{ error }}</p>
-                    <p>Number of events: {{ results }}</p>
+                    <p>Loading: {{ getEvents.loading }}</p>
+                    <p>Error: {{ getEvents.error }}</p>
+                    <p>Number of events: {{ getEvents.results }}</p>
                 </div>
             </div>
         </CompositionSection>
@@ -36,7 +36,7 @@ export default {
         getEvents.results.value = null;
       }
     });
-    return { searchInput, ...getEvents };
+    return { searchInput, getEvents };
   }
 }
 
