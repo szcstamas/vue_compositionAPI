@@ -4,6 +4,7 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/practice">Practice</RouterLink>
         <RouterLink to="/watch">Watch Effect</RouterLink>
+        <RouterLink to="/sharing-state">Sharing State</RouterLink>
     </nav>  
   </header>
 </template>
