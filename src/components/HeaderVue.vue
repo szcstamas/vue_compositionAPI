@@ -5,6 +5,7 @@
         <RouterLink to="/practice">Practice</RouterLink>
         <RouterLink to="/watch">Watch Effect</RouterLink>
         <RouterLink to="/sharing-state">Sharing State</RouterLink>
+        <RouterLink to="/skeleton-suspense">Suspense Skeleton</RouterLink>
     </nav>  
   </header>
 </template>
