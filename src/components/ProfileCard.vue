@@ -36,7 +36,7 @@ const loadUserData = async() => {
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .profile-card {
     width: 100%;

@@ -10,7 +10,7 @@
                     <ProfileCard />
                 </template>
                 <template #fallback>
-                    Loading...
+                    <ProfileCardSkeleton />
                 </template>
             </Suspense>
         </CompositionSection>
@@ -20,11 +20,13 @@
 <script>
 import CompositionSection from "@/components/CompositionSection.vue"
 import ProfileCard from "@/components/ProfileCard.vue"
+import ProfileCardSkeleton from "@/components/ProfileCardSkeleton.vue"
 
 export default {
     components: {
     CompositionSection,
-    ProfileCard
+    ProfileCard,
+    ProfileCardSkeleton
 }
 }
 
